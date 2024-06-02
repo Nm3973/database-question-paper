@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database and SQL Question Paper</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script defer src="scripts.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Pondicherry University</h1>
+            <h2>Department of Computer Science</h2>
+            <h3>M.Sc. Computer Science: End Semester Examinations May/June 2023</h3>
+            <p><strong>Date:</strong> 07-08-2023</p>
+            <p><strong>Course Code:</strong> CSSC 422: Advanced Database Systems</p>
+            <p><strong>Duration:</strong> 3 hours</p>
+            <p><strong>Max Marks:</strong> 60</p>
+        </header>
+        
+        <section>
+            <input type="text" id="searchBar" onkeyup="searchQuestions()" placeholder="Search for questions...">
+            <button onclick="generatePDF()">Export to PDF</button>
+        </section>
+        
+        <section class="important-questions">
+            <h2>Important Questions</h2>
+            <ul>
+                <li><a href="partitioning-techniques.html" target="_blank">Partitioning Techniques</a></li>
+                <li><a href="parallel-execution-costs.html" target="_blank">Parallel Execution Costs</a></li>
+                <li><a href="database-middleware.html" target="_blank">Database Middleware</a></li>
+                <li><a href="fragmentation-lossless-join.html" target="_blank">Fragmentation and Lossless-Join</a></li>
+                <li><a href="read-heavy-optimization.html" target="_blank">Read-Heavy Optimization Techniques</a></li>
+                <li><a href="sql-concepts.html" target="_blank">SQL Concepts</a></li>
+                <li><a href="triggers.html" target="_blank">Triggers</a></li>
+                <li><a href="normalization-3nf.html" target="_blank">Normalization and Third Normal Form (3NF)</a></li>
+                <li><a href="sql-challenges.html" target="_blank">Challenges in Accessing SQL from Programming Languages</a></li>
+                <li><a href="significance-of-keys.html" target="_blank">Significance of Keys</a></li>
+                <li><a href="conflict-equivalent-txn.html" target="_blank">Conflict Equivalent Transactions and Conflict Serializability</a></li>
+                <li><a href="er-diagram-schema.html" target="_blank">ER Diagram and Schema Design</a></li>
+                <li><a href="multimedia-db-applications.html" target="_blank">Multimedia Database Applications</a></li>
+                <li><a href="aries-algorithm.html" target="_blank">ARIES Algorithm and View Serializability</a></li>
+            </ul>
+        </section>
+        
+        <section class="question-paper">
+            <h2>Question Paper</h2>
+            <ol>
+                <li>Complete the sentence: hash partitioning and range partitioning are better than round-robin partitioning because...</li>
+                <li>The cost of executing individual operations in parallel (e.g., parallel sorting) obviously differs from executing them...</li>
+                <li>A special server as a layer of software that coordinates the execution of queries and transactions across one or more independent database servers, such software is often called...</li>
+                <li>Fragmentation is lossless-join.</li>
+                <li>Technique is attractive when reads are much more frequent than write.</li>
+                <li>SQL does not support multiple inheritance.
+                    <ul>
+                        <li>a. False</li>
+                        <li>b. True</li>
+                        <li>c. Cannot say</li>
+                    </ul>
+                </li>
+                <li>SQL supports two collection types: arrays and multisets;
+                    <ul>
+                        <li>a. False</li>
+                        <li>b. True</li>
+                        <li>c. Cannot say</li>
+                    </ul>
+                </li>
+                <li>The reverse process of transforming a INF relation into a nested relation is called...</li>
+                <li>Which of following approaches were not proposed by OOP languages:
+                    <ul>
+                        <li>a. Persistence by class</li>
+                        <li>b. Persistence by creation</li>
+                        <li>c. Persistence by Marking</li>
+                        <li>d. Persistence by reachability</li>
+                        <li>1. All of these</li>
+                        <li>2. None of these</li>
+                        <li>3. Both a,b,c</li>
+                        <li>4. Only a and d</li>
+                    </ul>
+                </li>
+                <li>Mobile database users are simply accessing a database through a network, which is similar to...
+                    <ul>
+                        <li>a. Distributed databases</li>
+                        <li>b. Parallel databases</li>
+                        <li>c. Multimedia databases</li>
+                        <li>d. None of these</li>
+                    </ul>
+                </li>
+                <li>Give two examples for each of the following:
+                    <ul>
+                        <li>a. Distributed Databases</li>
+                        <li>b. Object Oriented Databases</li>
+                        <li>c. Parallel Databases</li>
+                        <li>d. Relational databases</li>
+                    </ul>
+                </li>
+                <li>Define: Data Isolation and Data Inconsistency</li>
+                <li>How are Procedural DML different from Declarative DML?</li>
+                <li>State the Drawbacks of ACID properties.</li>
+                <li>Which is the better technique to store catalogue structure? Justify</li>
+                <li>Explain the following with suitable examples:
+                    <ul>
+                        <li>a. Union</li>
+                        <li>b. Intersection</li>
+                        <li>c. Cartesian product</li>
+                        <li>d. Set difference</li>
+                        <li>e. Rename</li>
+                    </ul>
+                    Use the following two tables and apply these operations:
+                    <br><strong>Table 1: French</strong>
+                    <br>Student Name | Roll number
+                    <br>Rama         | 01
+                    <br>Moni         | 02
+                    <br>Vishal       | 13
+                    <br>Geetu        | 17
+                    <br><strong>Table 2: German</strong>
+                    <br>Student name | Roll number
+                    <br>Vishal       | 13
+                    <br>Geetu        | 17
+                    <br>Shyamu       | 21
+                    <br>Rohan        | 25
+                </li>
+                <li>Explain the importance of a trigger along with its syntax and example</li>
+                <li>What is normal form. State the rules for third normal form for the following table:
+                    <ul>
+                        <li>Roll Number | State | City</li>
+                        <li>1 | Punjab | Mohali</li>
+                        <li>2 | Haryana | Ambala</li>
+                        <li>3 | Punjab | Mohali</li>
+                        <li>4 | Haryana | Ambala</li>
+                        <li>5 | Bihar | Patna</li>
+                    </ul>
+                </li>
+                <li>Write about the challenges involved in accessing SQL from a programming Language</li>
+                <li>What is the significance of keys. Discuss and state the examples for super key, Candidate Key, Primary Key, alternative key and Foreign Key.</li>
+                <li>Define conflict equivalent Txn. Check whether the following schedule is Conflict Serializable or not. Justify
+                    <br>T1 R(x) W(x)
+                    <br>T2 R(x) W(x) R(x)
+                    <br>OR</li>
+                <li>Assume that Your company does car rental business and has several locations with different addresses (address consist of street or rural route with the number, city, province and postal code). The cars are classified as subcompacts, compacts, sedans, or luxury. Each car has a particular make, model, year made, and color. Each car has a unique identification number and a unique license plate. For this application, design a logical Model and draw schema diagram. And answer the following queries:
+                    <ul>
+                        <li>List last name of all managers.</li>
+                        <li>Find the value of the cheapest (completed) rental.</li>
+                        <li>List last and first names of all customers.</li>
+                        <li>Give makes of the cars that have never been rented.</li>
+                    </ul>
+                </li>
+                <li>Describe any two of the following Multimedia database applications:
+                    <ul>
+                        <li>Digital Libraries</li>
+                        <li>Video-on-Demand</li>
+                        <li>Geographic Information Systems (GIS)</li>
+                        <li>OR</li>
+                        <li>News-on-Demand</li>
+                        <li>Music database</li>
+                        <li>Telemedicine</li>
+                    </ul>
+                </li>
+                <li>Give the steps in ARIES algorithm. Check whether the following schedules are View Serializable or not. Justify why or why not.
+                    <br>T1 R(A) W(A) R(B) W(B)
+                    <br>T2 R(A) W(A) R(B) W(B)
+                    <br>T1 W(A) R(B) W(B) R(A) W(A) R(B) W(B)
+                    <br>T2 T1 R(A) W(A) R(A) W(A) R(B) W(B) R(A) W(B)
+                </li>
+            </ol>
+        </section>
+        
+        <section class="answer-key">
+            <h2>Answer Key</h2>
+            <ol>
+                <li><strong>Answer:</strong> Hash partitioning and range partitioning are better than round-robin partitioning because they ensure more balanced data distribution and optimized query performance.</li>
+                <li><strong>Answer:</strong> Parallel execution can reduce total execution time but introduces synchronization, communication, and resource contention overheads, which do not exist in sequential execution.</li>
+                <li><strong>Answer:</strong> A database middleware, database proxy, query router, or transaction coordinator.</li>
+                <li><strong>Answer:</strong> This refers to ensuring that when a table is fragmented, it can be rejoined without losing any data.</li>
+                <li><strong>Answer:</strong> Indexing, caching, read replicas, and denormalization are effective techniques for optimizing read-heavy workloads.</li>
+                <li><strong>Answer:</strong> b. True</li>
+                <li><strong>Answer:</strong> c. Cannot say</li>
+                <li><strong>Answer:</strong> Unnesting or flattening.</li>
+                <li><strong>Answer:</strong> 1. All of these</li>
+                <li><strong>Answer:</strong> a. Distributed databases</li>
+                <li><strong>Distributed Databases:</strong> Google Spanner, Apache Cassandra<br>
+                    <strong>Object Oriented Databases:</strong> db4o, ObjectStore<br>
+                    <strong>Parallel Databases:</strong> Amazon Redshift, Teradata<br>
+                    <strong>Relational databases:</strong> MySQL, PostgreSQL</li>
+                <li><strong>Answer:</strong> Data Isolation: Separation of data such that changes in one part of the database do not affect other parts.<br>
+                    Data Inconsistency: Occurs when different versions of the same data exist in different places, leading to unreliable or incorrect information.</li>
+                <li><strong>Answer:</strong> Procedural DML: Specifies what data is needed and how to obtain it. Example: PL/SQL.<br>
+                    Declarative DML: Specifies what data is needed without specifying how to obtain it. Example: SQL.</li>
+                <li><strong>Answer:</strong> Performance Overhead, Scalability Issues, Complex Implementation, Resource Intensive.</li>
+                <li><strong>Answer:</strong> Storing in a relational database is better due to consistency, query capabilities, standardization, security, and data integrity.</li>
+                <li><strong>Answer:</strong>
+                    <ul>
+                        <li>a. Union: Combines results of two tables, eliminating duplicates.</li>
+                        <li>b. Intersection: Returns only rows common to both tables.</li>
+                        <li>c. Cartesian product: Combines all rows from the first table with all rows from the second table.</li>
+                        <li>d. Set difference: Returns rows in the first table but not in the second.</li>
+                        <li>e. Rename: Changes the name of a table or column in the result set.</li>
+                    </ul>
+                    <br><strong>Example:</strong><br>
+                    <strong>Table 1: French</strong>
+                    <table border="1">
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Roll number</th>
+                        </tr>
+                        <tr>
+                            <td>Rama</td>
+                            <td>01</td>
+                        </tr>
+                        <tr>
+                            <td>Moni</td>
+                            <td>02</td>
+                        </tr>
+                        <tr>
+                            <td>Vishal</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>Geetu</td>
+                            <td>17</td>
+                        </tr>
+                    </table>
+                    <br><strong>Table 2: German</strong>
+                    <table border="1">
+                        <tr>
+                            <th>Student name</th>
+                            <th>Roll number</th>
+                        </tr>
+                        <tr>
+                            <td>Vishal</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>Geetu</td>
+                            <td>17</td>
+                        </tr>
+                        <tr>
+                            <td>Shyamu</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td>Rohan</td>
+                            <td>25</td>
+                        </tr>
+                    </table>
+                    <br><strong>Union:</strong>
+                    <table border="1">
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Roll number</th>
+                        </tr>
+                        <tr>
+                            <td>Rama</td>
+                            <td>01</td>
+                        </tr>
+                        <tr>
+                            <td>Moni</td>
+                            <td>02</td>
+                        </tr>
+                        <tr>
+                            <td>Vishal</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>Geetu</td>
+                            <td>17</td>
+                        </tr>
+                        <tr>
+                            <td>Shyamu</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td>Rohan</td>
+                            <td>25</td>
+                        </tr>
+                    </table>
+                    <br><strong>Intersection:</strong>
+                    <table border="1">
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Roll number</th>
+                        </tr>
+                        <tr>
+                            <td>Vishal</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>Geetu</td>
+                            <td>17</td>
+                        </tr>
+                    </table>
+                    <br><strong>Cartesian Product:</strong>
+                    <table border="1">
+                        <tr>
+                            <th>French Student Name</th>
+                            <th>French Roll number</th>
+                            <th>German Student Name</th>
+                            <th>German Roll number</th>
+                        </tr>
+                        <tr>
+                            <td>Rama</td>
+                            <td>01</td>
+                            <td>Vishal</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>Rama</td>
+                            <td>01</td>
+                            <td>Geetu</td>
+                            <td>17</td>
+                        </tr>
+                        <tr>
+                            <td>Rama</td>
+                            <td>01</td>
+                            <td>Shyamu</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td>Rama</td>
+                            <td>01</td>
+                            <td>Rohan</td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td>Moni</td>
+                            <td>02</td>
+                            <td>Vishal</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>Moni</td>
+                            <td>02</td>
+                            <td>Geetu</td>
+                            <td>17</td>
+                        </tr>
+                        <tr>
+                            <td>Moni</td>
+                            <td>02</td>
+                            <td>Shyamu</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td>Moni</td>
+                            <td>02</td>
+                            <td>Rohan</td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td>Vishal</td>
+                            <td>13</td>
+                            <td>Vishal</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>Vishal</td>
+                            <td>13</td>
+                            <td>Geetu</td>
+                            <td>17</td>
+                        </tr>
+                        <tr>
+                            <td>Vishal</td>
+                            <td>13</td>
+                            <td>Shyamu</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td>Vishal</td>
+                            <td>13</td>
+                            <td>Rohan</td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td>Geetu</td>
+                            <td>17</td>
+                            <td>Vishal</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>Geetu</td>
+                            <td>17</td>
+                            <td>Geetu</td>
+                            <td>17</td>
+                        </tr>
+                        <tr>
+                            <td>Geetu</td>
+                            <td>17</td>
+                            <td>Shyamu</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td>Geetu</td>
+                            <td>17</td>
+                            <td>Rohan</td>
+                            <td>25</td>
+                        </tr>
+                    </table>
+                    <br><strong>Set Difference:</strong>
+                    <table border="1">
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Roll number</th>
+                        </tr>
+                        <tr>
+                            <td>Rama</td>
+                            <td>01</td>
+                        </tr>
+                        <tr>
+                            <td>Moni</td>
+                            <td>02</td>
+                        </tr>
+                    </table>
+                    <br><strong>Rename:</strong>
+                    <table border="1">
+                        <tr>
+                            <th>New Name</th>
+                            <th>New Roll number</th>
+                        </tr>
+                        <tr>
+                            <td>Rama</td>
+                            <td>01</td>
+                        </tr>
+                        <tr>
+                            <td>Moni</td>
+                            <td>02</td>
+                        </tr>
+                        <tr>
+                            <td>Vishal</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>Geetu</td>
+                            <td>17</td>
+                        </tr>
+                    </table>
+                </li>
+                <li><strong>Answer:</strong> A trigger is a procedural code that is automatically executed in response to certain events on a particular table or view. Triggers can enforce business rules, ensure data integrity, and provide audit trails.
+                    <br><strong>Syntax:</strong> 
+<pre><code>CREATE TRIGGER trigger_name 
+{BEFORE | AFTER} {INSERT | UPDATE | DELETE} 
+ON table_name 
+FOR EACH ROW 
+BEGIN 
+    ... 
+END;</code></pre>
+                    <br><strong>Example:</strong>
+<pre><code>CREATE TRIGGER update_student_grade
+AFTER UPDATE ON students
+FOR EACH ROW
+BEGIN
+    IF NEW.grade <> OLD.grade THEN
+        INSERT INTO grade_changes(student_id, old_grade, new_grade, change_date)
+        VALUES (OLD.id, OLD.grade, NEW.grade, NOW());
+    END IF;
+END;</code></pre>
+                </li>
+                <li><strong>Answer:</strong>
+                    <ul>
+                        <li>1 | Punjab | Mohali</li>
+                        <li>2 | Haryana | Ambala</li>
+                        <li>3 | Punjab | Mohali</li>
+                        <li>4 | Haryana | Ambala</li>
+                        <li>5 | Bihar | Patna</li>
+                    </ul>
+                    A table is in 3NF if it is in 2NF and all the attributes are functionally dependent only on the primary key. Steps:
+                    <ol>
+                        <li>Identify the candidate keys of the table.</li>
+                        <li>Ensure that all non-key attributes are fully functionally dependent on the primary key.</li>
+                        <li>Remove transitive dependencies.</li>
+                    </ol>
+                </li>
+                <li><strong>Answer:</strong> 
+                    <ul>
+                        <li>Impedance Mismatch: The difference in data models between SQL (relational) and programming languages (object-oriented) creates complexity in data translation.</li>
+                        <li>Error Handling: Properly catching and managing SQL errors within application code.</li>
+                        <li>Query Optimization: Writing efficient queries to avoid performance bottlenecks.</li>
+                        <li>Security Concerns: Protecting against SQL injection attacks.</li>
+                        <li>Connection Management: Efficiently managing database connections to ensure application performance.</li>
+                        <li>Concurrency Control: Handling concurrent data access to avoid deadlocks and ensure data consistency.</li>
+                        <li>Transaction Management: Ensuring ACID properties (Atomicity, Consistency, Isolation, Durability).</li>
+                        <li>Schema Evolution: Adapting application code to changes in the database schema.</li>
+                    </ul>
+                </li>
+                <li><strong>Answer:</strong> 
+                    <ul>
+                        <li>Super Key: A set of one or more columns that uniquely identify a record in a table.</li>
+                        <li>Candidate Key: A minimal super key, with no unnecessary columns.</li>
+                        <li>Primary Key: A candidate key chosen to uniquely identify records in a table.</li>
+                        <li>Alternative Key: A candidate key not chosen as the primary key.</li>
+                        <li>Foreign Key: A column or set of columns that establish a relationship between two tables, referencing the primary key in another table.</li>
+                    </ul>
+                    <br><strong>Example:</strong>
+                    <table border="1">
+                        <tr>
+                            <th>Student ID (PK)</th>
+                            <th>Name</th>
+                            <th>Course ID (FK)</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>John</td>
+                            <td>101</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Jane</td>
+                            <td>102</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Doe</td>
+                            <td>103</td>
+                        </tr>
+                    </table>
+                </li>
+                <li><strong>Answer:</strong> Conflict Equivalent Transactions: Two schedules are conflict equivalent if they involve the same operations and the order of conflicting operations is the same.<br>
+                    Conflict Serializability: A schedule is conflict serializable if it can be transformed into a serial schedule by swapping non-conflicting operations without changing the result.
+                    <br><strong>Example:</strong>
+<pre><code>Schedule:
+T1: R(x) W(x)
+T2: R(x) W(x) R(x)
+                    
+Conflict Serializable:
+Yes, if T2 operations can be reordered without affecting the final state.</code></pre>
+                </li>
+                <li><strong>Answer:</strong> 
+                    <ul>
+                        <li>List last name of all managers.</li>
+                        <li>Find the value of the cheapest (completed) rental.</li>
+                        <li>List last and first names of all customers.</li>
+                        <li>Give makes of the cars that have never been rented.</li>
+                    </ul>
+                </li>
+                <li><strong>Answer:</strong> 
+                    <ul>
+                        <li>Digital Libraries</li>
+                        <li>Video-on-Demand</li>
+                        <li>Geographic Information Systems (GIS)</li>
+                        <li>News-on-Demand</li>
+                        <li>Music database</li>
+                        <li>Telemedicine</li>
+                    </ul>
+                </li>
+                <li><strong>Answer:</strong> ARIES (Algorithm for Recovery and Isolation Exploiting Semantics): A recovery algorithm used to ensure database consistency after a crash.<br>
+                    Steps in ARIES:
+                    <ul>
+                        <li>Analysis Phase: Identifies dirty pages and active transactions.</li>
+                        <li>Redo Phase: Reapplies all changes to ensure updates of committed transactions are reflected.</li>
+                        <li>Undo Phase: Reverses changes of uncommitted transactions.</li>
+                    </ul>
+                    View Serializability: Ensures that a schedule can be transformed into a serial schedule by maintaining the same final state and equivalent read and write sequences.
+                </li>
+            </ol>
+        </section>
+    </div>
+</body>
+</html>

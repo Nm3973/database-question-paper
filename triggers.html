@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triggers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Triggers</h1>
+        </header>
+        
+        <section class="content">
+            <h2>Introduction</h2>
+            <p>Triggers are special types of stored procedures that are automatically executed or fired when certain events occur in a database. They are used to enforce business rules, maintain data integrity, and provide audit trails.</p>
+
+            <h2>Types of Triggers</h2>
+            <ul>
+                <li><strong>Before Triggers:</strong> Execute before an insert, update, or delete operation.</li>
+                <li><strong>After Triggers:</strong> Execute after an insert, update, or delete operation.</li>
+                <li><strong>Instead of Triggers:</strong> Used on views to perform an insert, update, or delete operation instead of the standard action.</li>
+            </ul>
+
+            <h2>Trigger Syntax</h2>
+            <pre><code>CREATE TRIGGER trigger_name 
+{BEFORE | AFTER} {INSERT | UPDATE | DELETE} 
+ON table_name 
+FOR EACH ROW 
+BEGIN 
+    ... 
+END;</code></pre>
+
+            <h2>Example Trigger</h2>
+            <pre><code>CREATE TRIGGER update_student_grade
+AFTER UPDATE ON students
+FOR EACH ROW
+BEGIN
+    IF NEW.grade <> OLD.grade THEN
+        INSERT INTO grade_changes(student_id, old_grade, new_grade, change_date)
+        VALUES (OLD.id, OLD.grade, NEW.grade, NOW());
+    END IF;
+END;</code></pre>
+
+            <h2>Use Cases for Triggers</h2>
+            <p>Triggers can be used for various purposes, including:
+                <ul>
+                    <li>Enforcing business rules and constraints.</li>
+                    <li>Automating system tasks, such as updating related tables.</li>
+                    <li>Maintaining audit trails by logging changes to sensitive data.</li>
+                    <li>Synchronizing data across multiple tables.</li>
+                </ul>
+            </p>
+        </section>
+    </div>
+</body>
+</html>

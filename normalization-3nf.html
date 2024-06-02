@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normalization and Third Normal Form (3NF)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Normalization and Third Normal Form (3NF)</h1>
+        </header>
+        
+        <section class="content">
+            <h2>Introduction</h2>
+            <p>Normalization is a process used in relational database design to reduce redundancy and improve data integrity. It involves organizing data into tables in such a way that the results of using the database are always unambiguous and as intended.</p>
+
+            <h2>Normal Forms</h2>
+            <h3>First Normal Form (1NF)</h3>
+            <p>A table is in 1NF if it contains only atomic (indivisible) values and each column contains values of a single type.</p>
+
+            <h3>Second Normal Form (2NF)</h3>
+            <p>A table is in 2NF if it is in 1NF and all non-key attributes are fully functionally dependent on the primary key.</p>
+
+            <h3>Third Normal Form (3NF)</h3>
+            <p>A table is in 3NF if it is in 2NF and all the attributes are functionally dependent only on the primary key. This means that there are no transitive dependencies (a non-key attribute is dependent on another non-key attribute).</p>
+
+            <h2>Example of Third Normal Form</h2>
+            <p>Consider the following table:</p>
+            <table border="1">
+                <tr>
+                    <th>Roll Number</th>
+                    <th>State</th>
+                    <th>City</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Punjab</td>
+                    <td>Mohali</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Haryana</td>
+                    <td>Ambala</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Punjab</td>
+                    <td>Mohali</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Haryana</td>
+                    <td>Ambala</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Bihar</td>
+                    <td>Patna</td>
+                </tr>
+            </table>
+
+            <h2>Steps to Achieve 3NF</h2>
+            <ol>
+                <li>Identify the candidate keys of the table.</li>
+                <li>Ensure that all non-key attributes are fully functionally dependent on the primary key.</li>
+                <li>Remove transitive dependencies by creating new tables.</li>
+            </ol>
+        </section>
+    </div>
+</body>
+</html>

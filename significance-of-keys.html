@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Significance of Keys</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Significance of Keys</h1>
+        </header>
+        
+        <section class="content">
+            <h2>Introduction</h2>
+            <p>Keys are fundamental to the structure and integrity of relational databases. They ensure that each record within a table can be uniquely identified and that relationships between tables are properly maintained.</p>
+
+            <h2>Types of Keys</h2>
+            <h3>Super Key</h3>
+            <p>A super key is a set of one or more columns that can uniquely identify a record in a table. A table can have multiple super keys.</p>
+
+            <h3>Candidate Key</h3>
+            <p>A candidate key is a minimal super key, meaning it contains no unnecessary columns. Each table can have one or more candidate keys.</p>
+
+            <h3>Primary Key</h3>
+            <p>A primary key is a candidate key chosen to uniquely identify records in a table. A table can have only one primary key.</p>
+
+            <h3>Alternative Key</h3>
+            <p>An alternative key is a candidate key that is not chosen as the primary key. It can still uniquely identify records within a table.</p>
+
+            <h3>Foreign Key</h3>
+            <p>A foreign key is a column or set of columns that establish a relationship between two tables, referencing the primary key in another table.</p>
+
+            <h2>Example</h2>
+            <table border="1">
+                <tr>
+                    <th>Student ID (PK)</th>
+                    <th>Name</th>
+                    <th>Course ID (FK)</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>John</td>
+                    <td>101</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jane</td>
+                    <td>102</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Doe</td>
+                    <td>103</td>
+                </tr>
+            </table>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARIES Algorithm and View Serializability</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ARIES Algorithm and View Serializability</h1>
+        </header>
+        
+        <section class="content">
+            <h2>Introduction</h2>
+            <p>The ARIES (Algorithm for Recovery and Isolation Exploiting Semantics) algorithm is a recovery method used in database management systems to ensure data consistency after a failure. View serializability is a criterion for ensuring the correctness of concurrent transactions.</p>
+
+            <h2>ARIES Algorithm</h2>
+            <p>ARIES is a comprehensive recovery algorithm that provides a method for logging and recovery in databases. It is used to ensure that a database can be restored to a consistent state after a crash.</p>
+
+            <h2>Steps in ARIES</h2>
+            <ol>
+                <li><strong>Analysis Phase:</strong> Identifies dirty pages and active transactions at the time of the crash.</li>
+                <li><strong>Redo Phase:</strong> Reapplies all changes from the log to ensure updates of committed transactions are reflected.</li>
+                <li><strong>Undo Phase:</strong> Reverses changes made by uncommitted transactions to restore the database to a consistent state.</li>
+            </ol>
+
+            <h2>View Serializability</h2>
+            <p>View serializability ensures that a schedule can be transformed into a serial schedule by maintaining the same final state and equivalent read and write sequences. It is less strict than conflict serializability but still guarantees the correctness of transactions.</p>
+
+            <h2>Example</h2>
+            <pre><code>Schedule:
+T1: R(A) W(A) R(B) W(B)
+T2: R(A) W(A) R(B) W(B)
+T1: W(A) R(B) W(B) R(A) W(A) R(B) W(B)
+T2: T1 R(A) W(A) R(A) W(A) R(B) W(B) R(A) W(B)
+                    
+View Serializable:
+Yes, if the final state and read/write sequences are equivalent to a serial schedule.</code></pre>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conflict Equivalent Transactions and Conflict Serializability</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Conflict Equivalent Transactions and Conflict Serializability</h1>
+        </header>
+        
+        <section class="content">
+            <h2>Introduction</h2>
+            <p>Conflict equivalent transactions and conflict serializability are concepts used in database concurrency control to ensure that transactions are executed in a manner that maintains data consistency.</p>
+
+            <h2>Conflict Equivalent Transactions</h2>
+            <p>Two schedules are conflict equivalent if they involve the same operations and the order of conflicting operations is the same. Conflicting operations are those that access the same data item and at least one of them is a write operation.</p>
+
+            <h2>Conflict Serializability</h2>
+            <p>A schedule is conflict serializable if it can be transformed into a serial schedule by swapping non-conflicting operations without changing the result. A serial schedule is one where transactions are executed one after the other without interleaving.</p>
+
+            <h2>Example</h2>
+            <pre><code>Schedule:
+T1: R(x) W(x)
+T2: R(x) W(x) R(x)
+                    
+Conflict Serializable:
+Yes, if T2 operations can be reordered without affecting the final state.</code></pre>
+        </section>
+    </div>
+</body>
+</html>

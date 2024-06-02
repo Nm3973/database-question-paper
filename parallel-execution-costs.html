@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallel Execution Costs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Parallel Execution Costs</h1>
+        </header>
+        
+        <section class="content">
+            <h2>Introduction</h2>
+            <p>Parallel execution involves dividing a task into sub-tasks that can be executed simultaneously on multiple processors. This technique can significantly reduce execution time, but it also introduces new challenges and overheads.</p>
+
+            <h2>Factors Affecting Parallel Execution Costs</h2>
+            <ul>
+                <li><strong>Synchronization Overhead:</strong> Coordinating tasks across multiple processors requires synchronization mechanisms, which can introduce delays.</li>
+                <li><strong>Communication Overhead:</strong> Processors need to communicate to exchange data and status information. This communication can consume time and resources.</li>
+                <li><strong>Resource Contention:</strong> Multiple processors competing for shared resources (e.g., memory, I/O) can lead to contention and performance degradation.</li>
+                <li><strong>Load Balancing:</strong> Uneven distribution of tasks among processors can result in some processors being underutilized while others are overburdened.</li>
+                <li><strong>Overhead of Parallelization:</strong> Dividing tasks, managing parallel execution, and aggregating results introduce overhead that can negate the benefits of parallel execution.</li>
+            </ul>
+
+            <h2>Optimizing Parallel Execution</h2>
+            <p>To optimize parallel execution, it is essential to minimize synchronization and communication overhead, balance the load among processors, and efficiently manage shared resources. Techniques such as partitioning, pipelining, and using efficient synchronization mechanisms can help achieve these goals.</p>
+        </section>
+    </div>
+</body>
+</html>
