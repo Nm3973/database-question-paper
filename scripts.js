@@ -12,19 +12,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     };
-
-    // Function to generate PDF
-    window.generatePDF = () => {
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF();
-        
-        let content = document.querySelector('.container').innerHTML;
-        doc.html(content, {
-            callback: function (doc) {
-                doc.save('question-paper.pdf');
-            },
-            x: 10,
-            y: 10
-        });
-    };
 });
